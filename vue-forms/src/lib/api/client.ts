@@ -33,16 +33,10 @@ export async function fakeFetch(
 
   return new Promise((resolve) => {
     setTimeout(() => {
-      if (Math.random() > 0.2) {
-        resolve({
-          requestId: new Date().getTime().toString(),
-          classifier: 'some-random-string',
-        })
-      } else {
-        resolve({
-          error: 'Что-то пошло не так на сервере',
-        })
-      }
+      resolve({
+        requestId: new Date().getTime().toString(),
+        classifier: 'some-random-string',
+      })
     }, 1000 + Math.random() * 200)
   })
 }
