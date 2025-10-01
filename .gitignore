@@ -15,6 +15,7 @@ node_modules/
 dist/
 build/
 .env
+package-lock.json
 .env.local
 .env.development.local
 .env.test.local
@@ -35,7 +36,3 @@ Thumbs.db
 *.bak
 *.vs/
 *.code-workspace
-
-# Project subdirectories
-/server/
-/vue-forms/
