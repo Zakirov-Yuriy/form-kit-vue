@@ -7,6 +7,5 @@ import { FormBService } from './form-b/form-b.service';
 @Module({
   controllers: [FormAController, FormBController],
   providers: [FormAService, FormBService],
-  exports: [FormAService, FormBService], 
 })
 export class FormsModule {}

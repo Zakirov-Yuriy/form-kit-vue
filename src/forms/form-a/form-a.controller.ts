@@ -1,17 +1,13 @@
-import { Controller, Post, Body, Logger } from '@nestjs/common';
+import { Controller, Post, Body } from '@nestjs/common';
 import { FormADto } from './form-a.dto';
+import { FormAService } from './form-a.service';
 
 @Controller('form-a')
 export class FormAController {
-  private readonly logger = new Logger(FormAController.name);
+  constructor(private readonly formAService: FormAService) {}
 
   @Post()
-  submitFormA(@Body() formData: FormADto): any {
-    this.logger.log('Received Form A submission:');
-    this.logger.log(formData);
-    return {
-      requestId: new Date().getTime().toString(),
-      classifier: 'form-a-submission-successful',
-    };
+  submitFormA(@Body() formData: FormADto) {
+    return this.formAService.processForm(formData);
   }
 }
