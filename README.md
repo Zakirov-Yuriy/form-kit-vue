@@ -71,7 +71,7 @@ form-kit-vue/
 
 1.  **Клонируйте репозиторий:**
     ```bash
-    git clone [URL_ВАШЕГО_РЕПОЗИТОРИЯ]
+    git clone git@github.com:Zakirov-Yuriy/form-kit-vue.git
     cd form-kit-vue
     ```
 2.  **Удалите все папки `node_modules` и `package-lock.json`** из корневой директории, а также из `server/` и `vue-forms/` (это поможет избежать конфликтов зависимостей):
@@ -98,6 +98,7 @@ form-kit-vue/
     ```bash
     cd server
     npm install
+    npm i @nestjs/swagger
     ```
 4.  **Установите зависимости для Vue 3 фронтенда:**
     ```bash
@@ -114,14 +115,14 @@ form-kit-vue/
     cd server
     npm run start:dev
     ```
-    Сервер будет запущен на `http://localhost:3000`.
+    Сервер будет запущен на `http://localhost:4000`.
 
 2.  **Запустите Vue 3 фронтенд (в другом терминале):**
     ```bash
     cd vue-forms
     npm run dev
     ```
-    Фронтенд будет запущен на `http://localhost:5173`.
+    Фронтенд будет запущен на `http://localhost:5173` (или на другом порту, если 5173 занят).
 
 ## Сценарий проверки
 
@@ -139,3 +140,9 @@ form-kit-vue/
 9.  На страницах форм и на странице результата есть кнопка "Главный экран" для возврата на главную страницу.
 10. Перейдите на "Форма B".
     ![Форма B](docs/images/form-b-page.png)
+
+## Логирование на сервере
+
+При отправке данных из форм, NestJS бэкенд логирует полученную информацию в консоль, что подтверждает успешное получение данных.
+
+![Логирование в консоли NestJS](docs/images/console-output.png)
