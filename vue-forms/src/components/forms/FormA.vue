@@ -77,7 +77,6 @@ function validateField(field: keyof FormA) {
   const fieldSchema = schemaFormA.pick({ [field]: true })
   const value = formData[field]
 
-  // Если поле необязательное и пустое, считаем его валидным и удаляем ошибку, если она была
   if (field === 'email' && value === '') {
     delete errors[field]
     return
@@ -116,8 +115,8 @@ async function submit() {
 form {
   max-width: 400px;
   margin: 0 auto;
-  display: flex; /* Добавляем flex */
-  flex-direction: column; /* Располагаем элементы в колонну */
+  display: flex;
+  flex-direction: column;
 }
 .api-error {
   color: red;
@@ -125,17 +124,17 @@ form {
 }
 .home-button {
   display: inline-block;
-  margin-top: 10px; /* Уменьшаем отступ, чтобы была ближе к кнопке "Отправить" */
+  margin-top: 10px;
   padding: 10px 20px;
-  background-color: #007bff; /* Синий цвет */
+  background-color: #007bff;
   color: white;
   text-decoration: none;
   border-radius: 4px;
   font-size: 1em;
   transition: background-color 0.3s ease;
-  text-align: center; /* Центрируем текст */
+  text-align: center;
 }
 .home-button:hover {
-  background-color: #0056b3; /* Темнее синий при наведении */
+  background-color: #0056b3;
 }
 </style>

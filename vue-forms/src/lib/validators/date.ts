@@ -27,7 +27,6 @@ export function isValidBirthDate(dateStr: string): boolean {
   const age = today.getFullYear() - date.getFullYear()
   const m = today.getMonth() - date.getMonth()
   if (m < 0 || (m === 0 && today.getDate() < date.getDate())) {
-    // age-- // This would be incorrect, age is already calculated
   }
 
   return age >= 0 && age <= 120

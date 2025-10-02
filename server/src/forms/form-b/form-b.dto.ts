@@ -1,14 +1,13 @@
 import { IsString, IsNotEmpty, IsEmail, Matches, Validate, ValidationArguments } from 'class-validator';
 import { Transform } from 'class-transformer';
 
-// Custom validator for Birth Date
 class BirthDateValidator {
   validate(value: string, args: ValidationArguments): boolean {
     if (!value) return false;
 
     const [regex] = args.constraints;
     if (!regex.test(value)) {
-      return false; // Does not match DD.MM.YYYY format
+      return false;
     }
 
     const parts = value.split('.');
@@ -18,12 +17,10 @@ class BirthDateValidator {
 
     const date = new Date(year, month - 1, day);
 
-    // Check if date is valid and matches the input parts
     if (date.getFullYear() !== year || date.getMonth() !== month - 1 || date.getDate() !== day) {
-      return false; // Invalid date (e.g., Feb 30)
+      return false;
     }
 
-    // Check age range (0-120 years)
     const today = new Date();
     const age = today.getFullYear() - year - (today.getMonth() < month - 1 || (today.getMonth() === month - 1 && today.getDate() < day) ? 1 : 0);
 

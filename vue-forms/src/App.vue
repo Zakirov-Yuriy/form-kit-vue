@@ -3,9 +3,8 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <RouterView />
+  <router-view />
 </template>
 
 <style>
-/* Глобальные стили уже импортированы в main.ts */
 </style>

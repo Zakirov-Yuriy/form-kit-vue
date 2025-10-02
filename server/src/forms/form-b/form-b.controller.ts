@@ -10,7 +10,6 @@ export class FormBController {
 
   @Post()
   submitFormB(@Body() data: FormB): { requestId: string; classifier: string } | { error: string } {
-    this.logger.log('Received Form B data:', data);
     return this.formBService.submitFormB(data);
   }
 }
